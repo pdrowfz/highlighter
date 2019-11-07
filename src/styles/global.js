@@ -25,7 +25,7 @@ export default createGlobalStyle`
   }
 
   body, input, button {
-    font: 14px Arial, Helvetica, sans-serif;
+    font: 1.4rem Arial, Helvetica, sans-serif;
   }
 
   a {

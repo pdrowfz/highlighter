@@ -3,8 +3,7 @@ import { Provider } from 'react-redux';
 
 import './config/ReactotronConfig';
 
-import Highlighter from './components/Highlighter';
-
+import Main from './pages/Main';
 import GlobalStyle from './styles/global';
 
 import store from './store';
@@ -12,7 +11,7 @@ import store from './store';
 function App() {
   return (
     <Provider store={store}>
-      <Highlighter text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+      <Main />
       <GlobalStyle />
     </Provider>
   );
