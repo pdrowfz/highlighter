@@ -13,3 +13,15 @@ export const HighlightFilters = styled.div`
     margin-left: 1rem;
   }
 `;
+
+export const FilteredHighlights = styled.ul`
+  margin-top: 2rem;
+
+  li + li {
+    margin-top: 1rem;
+  }
+`;
+
+export const Highlight = styled.li`
+  font-size: 1.8rem;
+`;

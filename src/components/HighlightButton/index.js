@@ -3,10 +3,11 @@ import { darken } from 'polished';
 
 export const HighlightButton = styled.button.attrs(props => ({
   backgroundColor: props.color || '#aaaaaa',
+  inactive: props.inactive || false,
 }))`
   display: flex;
   height: 5rem;
-  color: #000;
+  color: #000000;
   border: 0;
   border-radius: 0.4rem;
   font-size: 2.5rem;
@@ -21,4 +22,16 @@ export const HighlightButton = styled.button.attrs(props => ({
       background: ${darken(0.04, props.backgroundColor)};
     }
   `}
+
+  ${props =>
+    props.inactive &&
+    css`
+      border: 1px solid ${props.backgroundColor};
+      background: #ffffff;
+      color: ${props.backgroundColor};
+
+      &:hover {
+        color: #ffffff;
+      }
+    `}
 `;
