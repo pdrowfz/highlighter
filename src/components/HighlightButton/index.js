@@ -1,6 +1,9 @@
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 
+/**
+ * Button to be used as highlight color selection or filter
+ */
 export const HighlightButton = styled.button.attrs(props => ({
   backgroundColor: props.color || '#aaaaaa',
   inactive: props.inactive || false,

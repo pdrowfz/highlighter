@@ -16,12 +16,14 @@ export default function Filter({ colors }) {
   const [activeFilters, setActiveFilters] = useState(colors);
   const highlights = useSelector(state => state.highlight);
 
+  // Filters the stored highlights based on the selected colors
   const filteredHighlights = useMemo(() => {
     return highlights.filter(highlight =>
       activeFilters.includes(highlight.color)
     );
   }, [activeFilters, highlights]);
 
+  // Adds or removes a color to the filters' array
   function handleFilter(color) {
     const newFilters = [...activeFilters];
     const colorIndex = newFilters.indexOf(color);
@@ -52,13 +54,17 @@ export default function Filter({ colors }) {
         ))}
       </HighlightFilters>
       <FilteredHighlights data-testid="highlights-list">
-        {filteredHighlights.map(highlight => (
-          <Highlight key={highlight.text}>
-            <mark style={{ background: highlight.color }}>
-              {highlight.text}
-            </mark>
-          </Highlight>
-        ))}
+        {filteredHighlights.map((highlight, index) => {
+          const key = `${index}-${highlight.text}-${highlight.color}`;
+
+          return (
+            <Highlight key={key}>
+              <mark style={{ background: highlight.color }}>
+                {highlight.text}
+              </mark>
+            </Highlight>
+          );
+        })}
       </FilteredHighlights>
     </Container>
   );

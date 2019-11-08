@@ -19,6 +19,13 @@ export default function Highlighter({ colors, text }) {
 
   const dispatch = useDispatch();
 
+  /**
+   * Checks if there is a selection
+   * Surrounds the selected text with a mark element colored by the selected
+   * highlight color
+   * Dispatches the highlight and its color
+   * Displays an error message if the selection cannot be made
+   */
   function handleSelection(color) {
     setErrorMessage('');
     const surroundElement = document.createElement('mark');
