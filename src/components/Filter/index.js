@@ -37,6 +37,8 @@ export default function Filter({ colors }) {
 
   return (
     <Container>
+      <span>Click on a filter to hide/show highlights of its color.</span>
+
       <HighlightFilters>
         {colors.map(color => (
           <HighlightButton
@@ -52,9 +54,9 @@ export default function Filter({ colors }) {
       <FilteredHighlights data-testid="highlights-list">
         {filteredHighlights.map(highlight => (
           <Highlight key={highlight.text}>
-            <span style={{ background: highlight.color }}>
+            <mark style={{ background: highlight.color }}>
               {highlight.text}
-            </span>
+            </mark>
           </Highlight>
         ))}
       </FilteredHighlights>

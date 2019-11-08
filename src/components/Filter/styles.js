@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+
+  span {
+    margin-bottom: 2rem;
+  }
 `;
 
 export const HighlightFilters = styled.div`

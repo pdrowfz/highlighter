@@ -28,7 +28,7 @@ export default function Main() {
           <h1>Text Highlighter</h1>
 
           <textarea
-            placeholder="Text to be highlighted"
+            placeholder="Enter here the text to be highlighted"
             value={inputText}
             onChange={handleInputChange}
           />
