@@ -49,7 +49,7 @@ export default function Filter({ colors }) {
           </HighlightButton>
         ))}
       </HighlightFilters>
-      <FilteredHighlights>
+      <FilteredHighlights data-testid="highlights-list">
         {filteredHighlights.map(highlight => (
           <Highlight key={highlight.text}>
             <span style={{ background: highlight.color }}>
